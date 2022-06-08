@@ -38,7 +38,7 @@ def find_nearest_idx(array, value):
     return idx
 
 # import module functions
-from cavity1d import linear_dispersion_scattering as _linearScattering_linearDispersion #phaseAngle
+from pyrot.cavity1d import linear_dispersion_scattering as _linearScattering_linearDispersion
 import ML_numerical as ML
 
 def parratt_maxwell1D_matrix_compK(N0, D0, kRange, phaseOfHell=None):

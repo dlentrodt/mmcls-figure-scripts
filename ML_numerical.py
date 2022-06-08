@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
-import pynuss
-import pygreenfn.green_functions as pynuss_gf
 
 import scipy.ndimage as ndimage
 import scipy.ndimage.filters as filters
