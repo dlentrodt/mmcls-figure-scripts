@@ -25,7 +25,8 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
 
 # import modules and functions
-from pyrot.cavity1d import linear_dispersion_scattering as _linearScattering_linearDispersion
+#from pyrot.cavity1d import linear_dispersion_scattering as _linearScattering_linearDispersion
+import pyrot
 import ML_numerical as ML
 
 ### analytic version of Green function for numerical efficiency ###
@@ -114,14 +115,18 @@ for barrier_n in barrier_ns:
     atom_params_empty = copy.copy(atom_params)
     atom_params_empty[1] = 0.
 
-    _, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+    cavity = pyrot.Cavity1d(N, T)
+    #_, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+    S_linDisp_empty = cavity.scattering_matrix(k, zero_offset=R0)
 
     ##%%time
     max_inds = argrelextrema(np.abs(S_linDisp_empty[0,1,:])**2, np.less)
     ##print(max_inds)
     atom_params[2] = k[max_inds[0][1]]#-0.5
 
-    _, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0, 
+    atom   = pyrot.CavityAtoms1d(N, T, [atom_params,])
+    #_, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0,
+    S_linDisp = atom.linear_scattering_matrix(k, zero_offset=R0)
 
     # # plot
 
@@ -457,14 +462,18 @@ constants = [preFact, gamma]
 atom_params_empty = copy.copy(atom_params)
 atom_params_empty[1] = 0.
 
-_, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+cavity = pyrot.Cavity1d(N, T)
+#_, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+S_linDisp_empty = cavity.scattering_matrix(k, zero_offset=R0)
 
 ### with atom ###
 max_inds = argrelextrema(np.abs(S_linDisp_empty[0,1,:])**2, np.less)
 print(max_inds)
 atom_params[2] = k[max_inds[0][1]]#-0.5
 
-_, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0,
+atom   = pyrot.CavityAtoms1d(N, T, [atom_params,])
+#_, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0,
+S_linDisp = atom.linear_scattering_matrix(k, zero_offset=R0)
 
 # plot
 
@@ -741,14 +750,18 @@ constants = [preFact, gamma]
 atom_params_empty = copy.copy(atom_params)
 atom_params_empty[1] = 0.
 
-_, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+cavity = pyrot.Cavity1d(N, T)
+#_, _, S_linDisp_empty = _linearScattering_linearDispersion(k, N, T, atom_params_empty, phase_zero_offset=-k*R0) # R_ref=0.0,
+S_linDisp_empty = cavity.scattering_matrix(k, zero_offset=R0)
 
 ### with atom ###
 max_inds = argrelextrema(np.abs(S_linDisp_empty[0,1,:])**2, np.less)
 print(max_inds)
 atom_params[2] = k[max_inds[0][1]]#-0.5
 
-_, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0,
+atom   = pyrot.CavityAtoms1d(N, T, [atom_params,])
+#_, _, S_linDisp = _linearScattering_linearDispersion(k, N, T, atom_params, phase_zero_offset=-k*R0) # R_ref=0.0,
+S_linDisp = atom.linear_scattering_matrix(k, zero_offset=R0)
 
 # plot
 
