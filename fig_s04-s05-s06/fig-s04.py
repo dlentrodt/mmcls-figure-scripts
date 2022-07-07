@@ -15,7 +15,6 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
 
 # import module functions
-from pyrot.cavity1d import linear_dispersion_scattering as _linearScattering_linearDispersion
 import ML_numerical as ML
 import cav_functions as CF
 
