@@ -7,12 +7,11 @@ This software is an archive of the code used to create the scientific figures of
 Requirements:
 - numpy, scipy, matplotlib, jupyter, possibly other standard python packages
 - pynuss: A software package for nuclear resonance scattering. Currently unpublished and available from the author K. P. Heeg.
-- pyrot: A software package implementing linear dispersion theory and Parratt's formalism for general one-dimensional cavities given by a refractive index profile, created for this paper. Available at TODO.
+- pyrot: A software package implementing linear dispersion theory and Parratt's formalism for general one-dimensional cavities given by a refractive index profile, created for this paper. Available via pip (see https://github.com/dlentrodt/pyrot).
 
 Contents:
 - License
 - Readme file
 - ML_numerical.py: A class implementing a simple numerical scheme to compute Mittag-Leffler pole expansions of a given function that can be numerically evaluated in the complex plane.
-- cavity1d.py: Classes 
 - cav_functions.py: Helper for functions for evaluation of certain quantities in the complex plane.
 - Subfolders containing scripts creating each figure as pdf output. Additional plots for benchmarking are commented out in the code.
