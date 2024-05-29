@@ -2,7 +2,7 @@
 
 This software is an archive of the code used to create the scientific figures of the article
 
-- D. Lentrodt, O. Diekmann, C. H. Keitel, S. Rotter, J. Evers "Certifying Multimode Light-Matter Interaction in Lossy Resonators" Phys. Rev. Lett. 130, 263602 (2023); Journal: https://doi.org/10.1103/PhysRevLett.130.263602, Preprint: https://doi.org/10.48550/arXiv.2107.11775.
+- D. Lentrodt, O. Diekmann, C. H. Keitel, S. Rotter, J. Evers "Certifying Multimode Light-Matter Interaction in Lossy Resonators" *Phys. Rev. Lett.* **130**, 263602 (2023); Journal: https://doi.org/10.1103/PhysRevLett.130.263602, Preprint: https://doi.org/10.48550/arXiv.2107.11775.
 
 Requirements:
 - numpy, scipy, matplotlib, jupyter, possibly other standard python packages
